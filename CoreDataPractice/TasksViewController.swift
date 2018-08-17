@@ -31,6 +31,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = UITableViewCell()
         let task = tasks[indexPath.row]
         
+        // render tasks on screen
         if task.important {
             cell.textLabel?.text = "‼️ \(task.name)"
         }
@@ -41,19 +42,21 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
+    // listener for selecting a task from the list
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        selectedIndex = indexPath.row
+        selectedIndex = indexPath.row // get index of selected task
         let task = tasks[indexPath.row]
         performSegue(withIdentifier: "viewTask", sender: task)
     }
-        
+    
+    // listener for 'add' button press
     @IBAction func addPressed(_ sender: Any) {
         performSegue(withIdentifier: "addTask", sender: nil)
     }
     
+    // segue logic to either add or view task
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    
         if segue.identifier == "addTask" {
             let nextVC = segue.destination as! CreateTaskViewController
             nextVC.previousVC = self

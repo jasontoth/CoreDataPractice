@@ -12,11 +12,12 @@ class ViewTaskViewController: UIViewController {
 
     @IBOutlet weak var taskLabel: UILabel!
     var task = Task()
-    var previousVC = TasksViewController()
+    var previousVC = TasksViewController() // link to ViewController so task object can be passed around
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // render selected task on screen
         if task.important {
             taskLabel.text = "‼️ \(task.name)"
         }
@@ -27,9 +28,10 @@ class ViewTaskViewController: UIViewController {
     }
 
     @IBAction func completeTask(_ sender: Any) {
-        previousVC.tasks.remove(at: previousVC.selectedIndex)
-        previousVC.tableView.reloadData()
-        navigationController?.popViewController(animated: true)
+        // Remove task from Tasks array (other controller)
+        previousVC.tasks.remove(at: previousVC.selectedIndex) // remove completed task from the array
+        previousVC.tableView.reloadData() // reload list page to refresh data
+        navigationController?.popViewController(animated: true) // navigate back to task list page
     }
     
     override func didReceiveMemoryWarning() {
