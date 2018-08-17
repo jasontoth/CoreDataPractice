@@ -13,6 +13,8 @@ class CreateTaskViewController: UIViewController {
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
     
+    var previousVC = TasksViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,9 +22,20 @@ class CreateTaskViewController: UIViewController {
     }
 
     @IBAction func saveTask(_ sender: Any) {
+        print("pre-save:")
+        print(previousVC.tasks.count)
+        // Create task using input data
+        let task = Task()
+        task.name = taskNameTextField.text!
+        task.important = importantSwitch.isOn
+        
+        // Add task to Tasks array (other controller)
+        previousVC.tasks.append(task)
+        previousVC.tableView.reloadData()
+        navigationController?.popViewController(animated: true)
+        print("post-save:")
+        print(previousVC.tasks.count)
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

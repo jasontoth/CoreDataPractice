@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ACCC9D23212659F8005691B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC9D22212659F8005691B0 /* AppDelegate.swift */; };
-		ACCC9D25212659F8005691B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC9D24212659F8005691B0 /* ViewController.swift */; };
+		ACCC9D25212659F8005691B0 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC9D24212659F8005691B0 /* TasksViewController.swift */; };
 		ACCC9D28212659F8005691B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCC9D26212659F8005691B0 /* Main.storyboard */; };
 		ACCC9D2B212659F8005691B0 /* CoreDataPractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACCC9D29212659F8005691B0 /* CoreDataPractice.xcdatamodeld */; };
 		ACCC9D2D212659F9005691B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACCC9D2C212659F9005691B0 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		ACCC9D1F212659F8005691B0 /* CoreDataPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCC9D22212659F8005691B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACCC9D24212659F8005691B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACCC9D24212659F8005691B0 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		ACCC9D27212659F8005691B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACCC9D2A212659F8005691B0 /* CoreDataPractice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataPractice.xcdatamodel; sourceTree = "<group>"; };
 		ACCC9D2C212659F9005691B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				ACCC9D22212659F8005691B0 /* AppDelegate.swift */,
-				ACCC9D24212659F8005691B0 /* ViewController.swift */,
+				ACCC9D24212659F8005691B0 /* TasksViewController.swift */,
+				ACCC9D39212664BE005691B0 /* CreateTaskViewController.swift */,
 				ACCC9D3721265D1F005691B0 /* Task.swift */,
 				ACCC9D26212659F8005691B0 /* Main.storyboard */,
-				ACCC9D39212664BE005691B0 /* CreateTaskViewController.swift */,
 				ACCC9D2C212659F9005691B0 /* Assets.xcassets */,
 				ACCC9D2E212659F9005691B0 /* LaunchScreen.storyboard */,
 				ACCC9D31212659F9005691B0 /* Info.plist */,
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACCC9D3821265D1F005691B0 /* Task.swift in Sources */,
-				ACCC9D25212659F8005691B0 /* ViewController.swift in Sources */,
+				ACCC9D25212659F8005691B0 /* TasksViewController.swift in Sources */,
 				ACCC9D2B212659F8005691B0 /* CoreDataPractice.xcdatamodeld in Sources */,
 				ACCC9D23212659F8005691B0 /* AppDelegate.swift in Sources */,
 				ACCC9D3A212664BE005691B0 /* CreateTaskViewController.swift in Sources */,

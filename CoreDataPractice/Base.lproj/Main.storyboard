@@ -13,7 +13,7 @@
         <!--Tasks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="CoreDataPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,18 +75,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FHa-ys-LzM">
-                                <rect key="frame" x="163" y="224" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FHa-ys-LzM">
+                                <rect key="frame" x="163" y="226" width="51" height="31"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZ3-Xw-EDL">
-                                <rect key="frame" x="172" y="318" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4E-uD-59r">
-                                <rect key="frame" x="172" y="318" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZ3-Xw-EDL">
+                                <rect key="frame" x="172" y="320" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <action selector="saveTask:" destination="dWg-vG-1EJ" eventType="touchUpInside" id="dLH-HV-6Is"/>
+                                    <action selector="saveTask:" destination="dWg-vG-1EJ" eventType="touchUpInside" id="RsS-FD-9ng"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,10 +96,10 @@
                             <constraint firstItem="g6w-zI-L0U" firstAttribute="centerX" secondItem="ll3-x2-Y5L" secondAttribute="centerX" id="Pqt-cj-BNN"/>
                             <constraint firstItem="g6w-zI-L0U" firstAttribute="top" secondItem="rkJ-oN-oBr" secondAttribute="top" constant="15" id="W4q-ak-fp0"/>
                             <constraint firstItem="FHa-ys-LzM" firstAttribute="centerX" secondItem="ll3-x2-Y5L" secondAttribute="centerX" id="aZf-SE-mjx"/>
-                            <constraint firstItem="S4E-uD-59r" firstAttribute="top" secondItem="FHa-ys-LzM" secondAttribute="bottom" constant="63" id="deg-gs-cut"/>
+                            <constraint firstItem="RZ3-Xw-EDL" firstAttribute="centerX" secondItem="ll3-x2-Y5L" secondAttribute="centerX" id="fAU-nE-Mn7"/>
                             <constraint firstItem="FHa-ys-LzM" firstAttribute="top" secondItem="svX-WO-e2Y" secondAttribute="bottom" constant="10" id="po6-Ok-K5s"/>
-                            <constraint firstItem="RZ3-Xw-EDL" firstAttribute="centerX" secondItem="ll3-x2-Y5L" secondAttribute="centerX" id="qT8-bZ-gnn"/>
                             <constraint firstItem="svX-WO-e2Y" firstAttribute="centerX" secondItem="ll3-x2-Y5L" secondAttribute="centerX" id="rCX-sO-zdT"/>
+                            <constraint firstItem="RZ3-Xw-EDL" firstAttribute="top" secondItem="FHa-ys-LzM" secondAttribute="bottom" constant="63" id="wXQ-jn-4QU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rkJ-oN-oBr"/>
                     </view>
