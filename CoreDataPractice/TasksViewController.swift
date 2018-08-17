@@ -13,16 +13,19 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var tasks : [Task] = [];
-    var selectedIndex = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         tableView.dataSource = self
         tableView.delegate =  self
     }
 
+    // This is called anytime the View Controller is about to appear on the screen
+    override func viewWillAppear(_ animated: Bool) {
+        getTasks()
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -33,10 +36,10 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // render tasks on screen
         if task.important {
-            cell.textLabel?.text = "‼️ \(task.name)"
+            cell.textLabel?.text = "‼️ \(task.name!)"
         }
         else {
-            cell.textLabel?.text = task.name
+            cell.textLabel?.text = task.name!
         }
         
         return cell
@@ -44,7 +47,6 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // listener for selecting a task from the list
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row // get index of selected task
         let task = tasks[indexPath.row]
         performSegue(withIdentifier: "viewTask", sender: task)
     }
@@ -54,17 +56,23 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "addTask", sender: nil)
     }
     
+    func getTasks() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            tasks = try context.fetch(Task.fetchRequest()) as! [Task]
+        }
+        catch {
+            print("Error while fetching tasks")
+        }
+    }
+    
     // segue logic to either add or view task
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-        if segue.identifier == "addTask" {
-            let nextVC = segue.destination as! CreateTaskViewController
-            nextVC.previousVC = self
-        }
-        else if segue.identifier == "viewTask" {
+        if segue.identifier == "viewTask" {
             let nextVC = segue.destination as! ViewTaskViewController
-            nextVC.task = sender as! Task
-            nextVC.previousVC = self
+            nextVC.task = sender as? Task
         }
     }
     

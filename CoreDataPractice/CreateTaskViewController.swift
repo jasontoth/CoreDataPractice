@@ -12,9 +12,7 @@ class CreateTaskViewController: UIViewController {
 
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
-    
-    var previousVC = TasksViewController() // link to ViewController so task object can be passed around
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,15 +21,17 @@ class CreateTaskViewController: UIViewController {
 
     @IBAction func saveTask(_ sender: Any) {
         // Create task using input data
-        let task = Task() // create new tasks using input values
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let task = Task(context: context) // create new tasks using input values
         if taskNameTextField.text != nil {
             task.name = taskNameTextField.text!
             task.important = importantSwitch.isOn
         }
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
-        // Add task to Tasks array (other controller)
-        previousVC.tasks.append(task) // add new task to tasks array
-        previousVC.tableView.reloadData() // reload list page to refresh data
+        // Pop back to list page
         navigationController?.popViewController(animated: true) // navigate back to task list page
     }
     
