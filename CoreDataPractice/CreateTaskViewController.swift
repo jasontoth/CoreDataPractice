@@ -24,8 +24,10 @@ class CreateTaskViewController: UIViewController {
     @IBAction func saveTask(_ sender: Any) {
         // Create task using input data
         let task = Task()
-        task.name = taskNameTextField.text!
-        task.important = importantSwitch.isOn
+        if taskNameTextField.text != nil {
+            task.name = taskNameTextField.text!
+            task.important = importantSwitch.isOn
+        }
         
         // Add task to Tasks array (other controller)
         previousVC.tasks.append(task)
