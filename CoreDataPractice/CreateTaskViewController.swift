@@ -22,8 +22,6 @@ class CreateTaskViewController: UIViewController {
     }
 
     @IBAction func saveTask(_ sender: Any) {
-        print("pre-save:")
-        print(previousVC.tasks.count)
         // Create task using input data
         let task = Task()
         task.name = taskNameTextField.text!
@@ -33,8 +31,6 @@ class CreateTaskViewController: UIViewController {
         previousVC.tasks.append(task)
         previousVC.tableView.reloadData()
         navigationController?.popViewController(animated: true)
-        print("post-save:")
-        print(previousVC.tasks.count)
     }
     
     override func didReceiveMemoryWarning() {
